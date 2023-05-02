@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider/AuthProvider';
 
 const Register = () => {
-    const {user,createUser} = useContext(AuthContext)
+    const {user,createUser, googelSignIn, gitHubSignIn} = useContext(AuthContext)
+    const [error, setError] = useState(null)
     
     const handleRegister = (event) =>{
       event.preventDefault()
@@ -13,7 +14,12 @@ const Register = () => {
       const photoUrl = form.photo.value;
       const email = form.email.value;
       const password = form.password.value;
-      console.log(email, password)
+      if(email.length === 0){
+        return setError("opps! email is empty")
+      }
+      if(password.length < 6){
+        return setError("password at least 6 chrachters")
+      }
       createUser(email, password)
       .then((result) =>{
         const createdUser = result.user;
@@ -66,20 +72,21 @@ const Register = () => {
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
           </label>
         </div>
+        <p className='font-medium text-red-600'>{error}</p>
 
         
 
         
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Login</button>
+          <button className="btn btn-primary">Register</button>
         </div>
         <p>Already have an account? <Link to="/login">Login</Link></p>
 
         <div>
             <h3 className='text-center border-b-2'>Other option</h3>
             <div className='flex justify-center space-x-3 text-2xl mt-4'>
-                <span><FaGoogle /></span>
-                <span><FaGithub /></span>
+                <span onClick={googelSignIn}><FaGoogle /></span>
+                <span onClick={gitHubSignIn}><FaGithub /></span>
             </div>
         </div>
       </form>

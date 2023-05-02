@@ -8,6 +8,7 @@ import Home from "../../home/Home/Home";
 
 import ChefRecipeLayout from "../../layout/ChefRecipeLayout";
 import ChefRecipes from "../../pages/ChefRecipes/ChefRecipes";
+import ErrorPage from "../../ErrorPage/ErrorPage";
 
 
   const router = createBrowserRouter([
@@ -43,6 +44,10 @@ import ChefRecipes from "../../pages/ChefRecipes/ChefRecipes";
         
       ]
     },
+    {
+      path : "*",
+      element : <ErrorPage></ErrorPage>
+    }
   ]);
 
   export default router

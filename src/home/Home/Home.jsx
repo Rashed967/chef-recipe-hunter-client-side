@@ -1,6 +1,7 @@
 import React from "react";
 import image1 from '../../assets/image1.jpg'
 import Chefs from "../Chefs/Chefs";
+import { Link } from "react-router-dom";
 
 
 const Home = () => {
@@ -12,7 +13,7 @@ const Home = () => {
     <div>
       <h1 className="text-5xl font-bold">A Culinary Mastermind with a Passion for Flavors</h1>
       <p className="py-6">A culinary mastermind with a passion for flavors. His innovative creations using fresh ingredients have earned him recognition and accolades.</p>
-      <button className="btn btn-primary">Order now</button>
+      <Link to="/login" className="btn btn-primary">Login Now</Link >
     </div>
   </div>
 </div>

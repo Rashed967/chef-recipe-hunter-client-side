@@ -8,7 +8,7 @@ const auth = getAuth();
 
 
 const Login = () => {
-  const {signInUser, googelSignIn} = useContext(AuthContext)
+  const {signInUser, googelSignIn, gitHubSignIn} = useContext(AuthContext)
 
   const handleSignIn = (event) => {
     event.preventDefault()
@@ -64,7 +64,7 @@ const Login = () => {
             <h3 className='text-center border-b-2'>Other option</h3>
             <div className='flex justify-center space-x-3 text-2xl mt-4'>
                 <span onClick={googelSignIn}><FaGoogle /></span>
-                <span><FaGithub /></span>
+                <span onClick={gitHubSignIn}><FaGithub /></span>
             </div>
         </div>
       </form>
