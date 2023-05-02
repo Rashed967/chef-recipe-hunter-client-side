@@ -6,8 +6,23 @@ import Login from "../../pages/Login/Login";
 import Register from "../../pages/Register/Register";
 import Home from "../../home/Home/Home";
 
+import ChefRecipeLayout from "../../layout/ChefRecipeLayout";
+import ChefRecipes from "../../pages/ChefRecipes/ChefRecipes";
+
 
   const router = createBrowserRouter([
+    {
+        path : "chefs",
+        element : <ChefRecipeLayout></ChefRecipeLayout>,
+        children : [
+            {
+              path : ":id",
+              element : <ChefRecipes></ChefRecipes>,
+              loader : ({params}) => fetch(`http://localhost:5000/chefs/${params.id}`)
+            }
+        ]
+
+    },
     {
       path: "/",
       element: <Main></Main>,
@@ -24,7 +39,8 @@ import Home from "../../home/Home/Home";
         {
           path : "/register",
           element : <Register></Register>
-        }
+        },
+        
       ]
     },
   ]);

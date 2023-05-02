@@ -1,9 +1,11 @@
 import React from 'react';
 import { BiLike } from "react-icons/bi";
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const Chef = ({chef}) => {
     const {picture, name, experience, numRecipes, likes, id} = chef;
+    
+    
 
     return (
        
@@ -20,7 +22,7 @@ const Chef = ({chef}) => {
         <BiLike></BiLike>
         <span> {likes}</span>
       </div>
-      <Link className="badge badge-outline">View Recipes</Link>
+      <Link to={`/chefs/${id}`} className="badge badge-outline">View Recipes</Link>
     </div>
   </div>
 </div>
