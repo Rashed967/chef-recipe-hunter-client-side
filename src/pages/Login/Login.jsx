@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { FaExpeditedssl, FaGithub, FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider/AuthProvider';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
@@ -9,6 +9,10 @@ const auth = getAuth();
 
 const Login = () => {
   const {signInUser, googelSignIn, gitHubSignIn} = useContext(AuthContext)
+
+  const location = useLocation()
+  const from = location?.state?.from?.pathname || "/";
+
 
   const handleSignIn = (event) => {
     event.preventDefault()
@@ -57,7 +61,7 @@ const Login = () => {
 
 
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Login</button>
+          <Link to={from} className="btn btn-primary">Login</Link>
         </div>
         <p>New to this website? <Link to="/register">Register Now</Link></p>
         <div>

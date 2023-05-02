@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaRegUser } from 'react-icons/fa';
 import { AuthContext } from '../../providers/AuthProvider/AuthProvider';
+import ActiveLink from '../ActiveLink/ActiveLink';
 
 
 const NavBar = () => {
@@ -14,9 +15,9 @@ const NavBar = () => {
     <h3 className="btn btn-ghost normal-case text-xl">daisyUI</h3>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
-      <Link to="/" className='mx-3'>Home</Link>
-      <Link>Blog</Link>
+    <ul className="menu menu-horizontal px-3">
+      <ActiveLink to="/" className='mx-3'>Home</ActiveLink>
+      <ActiveLink to="/blog" className='ms-2'>Blog</ActiveLink>
     </ul>
   </div>
   <div className="navbar-end">
