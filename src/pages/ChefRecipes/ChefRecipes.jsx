@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useLoaderData, useParams } from 'react-router-dom';
 import image1 from '../../assets/image1.jpg'
 import { BiLike } from 'react-icons/bi';
+import Recipe from './Recipe/Recipe';
 
 const ChefRecipes = () => {
     const {id} = useParams()
@@ -26,25 +27,16 @@ const ChefRecipes = () => {
         <div>
             <h3>All recipes</h3>
             <div>
+
             {
-                <div className="card  bg-base-100 shadow-xl mb-5">
-                <figure><img className='h-72 object-cover' src={picture} alt="Shoes" /></figure>
-                <div className="card-body">
-                  <h2 className="card-title">
-                    {name}
-                  </h2>
-                  <p>experience : {experience} Years</p>
-                  <p>Numbers of recipes : {numRecipes} Recipe</p>
-                  <div className="card-actions justify-between items-center mt-3">
-                    <div className="flex space-x-2 items-center ">
-                      <BiLike></BiLike>
-                      <span> {likes}</span>
-                    </div>
-                    <Link to={`/chefs/${id}`} className="badge badge-outline">View Recipes</Link>
-                  </div>
-                </div>
-              </div>
+                recipes.map(recipe => <Recipe
+                key={recipe.id}
+                recipe={recipe}
+                ></Recipe>)
+
             }
+
+
             </div>
         </div>
 
