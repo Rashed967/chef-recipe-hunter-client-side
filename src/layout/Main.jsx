@@ -8,7 +8,6 @@ const Main = () => {
     return (
         <div className='container mx-auto'>
             <NavBar></NavBar>
-            <h2>Main Layout</h2>
             <Outlet></Outlet>
             <Footer></Footer>
         </div>

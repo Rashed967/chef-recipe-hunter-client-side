@@ -25,8 +25,7 @@ const ChefRecipes = () => {
 </div>
 
         <div>
-            <h3>All recipes</h3>
-            <div>
+            <div className='grid lg:grid-cols-3 md:grid-cols-2 space-x-4 mt-5 px-4'>
 
             {
                 recipes.map(recipe => <Recipe
