@@ -4,13 +4,14 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+
 const firebaseConfig = {
-  apiKey: "AIzaSyB3YEeLknubqMM0BDhSlEhvcCnxqhn3LCE",
-  authDomain: "afghan-chef-hunter-by-rashed.firebaseapp.com",
-  projectId: "afghan-chef-hunter-by-rashed",
-  storageBucket: "afghan-chef-hunter-by-rashed.appspot.com",
-  messagingSenderId: "209064770182",
-  appId: "1:209064770182:web:f3a8d6fcf2ec320537ef07"
+  apiKey:import.meta.env.VITE_APIKEY,
+  authDomain:import.meta.env.VITE_AUTHDOMAIN,
+  projectId:import.meta.env.VITE_PROJECTID,
+  storageBucket:import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId:import.meta.env.VITE_MESSAGINGSENDERID,
+  appId:import.meta.env.VITE_APPID,
 };
 
 // Initialize Firebase
