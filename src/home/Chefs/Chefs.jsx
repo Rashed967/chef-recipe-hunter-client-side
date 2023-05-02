@@ -13,12 +13,14 @@ const Chefs = () => {
     return (
         <div className='mt-4'>
             <h4 className='text-3xl font-semibold text-center'>Popular Chefs</h4>
+            <div className='container grid grid-cols-3'>
             {
                 chefs.map(chef => <Chef
                 key={chef.id}
                 chef={chef}
                 ></Chef>)
             }
+            </div>
         </div>
     );
 };
