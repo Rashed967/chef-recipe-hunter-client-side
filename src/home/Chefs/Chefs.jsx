@@ -19,7 +19,9 @@ const Chefs = () => {
         
         <div className='mt-4'>
             
-            <h4 className='text-3xl font-semibold text-center'>Popular Chefs</h4>
+            <div className='bg-lime-50 py-6'>
+            <h4 className='text-3xl font-semibold text-center uppercase'>Popular Chefs</h4>
+            </div>
             <div className='container grid md:grid-cols-2 lg:grid-cols-3 space-x-4 mt-7'>
             {
                 chefs.map(chef => <Chef

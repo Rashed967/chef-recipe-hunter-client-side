@@ -22,9 +22,11 @@ const ChefRecipes = () => {
     <div>
       <h1 className="text-5xl font-bold">{name}</h1>
       <p className="py-6">{bio}</p>
-      <p className='text-xl'>number of recipes : {numRecipes}</p>
-      <p className='text-xl'> years of experience : {experience}</p>
-      <p  className='flex space-x-2 items-center text-xl'><BiLike ></BiLike> <span> {likes} </span> </p>
+      <div className='flex justify-center space-x-10 mt-5'>
+      <p className='text-xl border border-black p-2 rounded-md'>number of recipes : {numRecipes}</p>
+      <p className='text-xl border border-black p-2 rounded-md'> years of experience : {experience}</p>
+      <p  className='flex space-x-2 items-center text-xl border border-black p-2 rounded-md'><BiLike ></BiLike> <span> {likes} </span> </p>
+      </div>
     </div>
   </div>
 </div>
