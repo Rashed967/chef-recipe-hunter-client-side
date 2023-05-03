@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { lazy, useState } from 'react';
 import { BiLike } from 'react-icons/bi';
 import { FaHeart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
@@ -26,7 +26,7 @@ const Recipe = ({recipe}) => {
 
     return (
         <div className="card  bg-base-100 shadow-xl mb-5">
-                 <figure><img className='h-72 object-cover' src={recipe?.picture} alt="Shoes" /></figure>
+                 <figure><img loading={lazy} className='h-72 object-cover' src={recipe?.picture} alt="Shoes" /></figure>
                  <div className="card-body">
                    <h2 className="card-title">
                     {recipe?.name}

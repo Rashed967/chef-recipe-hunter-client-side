@@ -1,3 +1,4 @@
+import React from "react";
 import {
     createBrowserRouter,
   } from "react-router-dom";
@@ -6,17 +7,20 @@ import Login from "../../pages/Login/Login";
 import Register from "../../pages/Register/Register";
 import Home from "../../home/Home/Home";
 
-import ChefRecipeLayout from "../../layout/ChefRecipeLayout";
+// import ChefRecipeLayout from "../../layout/ChefRecipeLayout";
 import ChefRecipes from "../../pages/ChefRecipes/ChefRecipes";
 import ErrorPage from "../../ErrorPage/ErrorPage";
 import Blog from "../../pages/Blog/Blog";
 import PrivetRoute from "../PrivetRoute/PrivetRoute";
+const ChefRecipeLayout = React.lazy(() => import('../../layout/ChefRecipeLayout'))
+
+
 
 
   const router = createBrowserRouter([
     {
         path : "chefs",
-        element : <ChefRecipeLayout></ChefRecipeLayout>,
+        element : <React.Suspense fallback="Loading"><ChefRecipeLayout></ChefRecipeLayout></React.Suspense>,
         children : [
             {
               path : ":id",
@@ -45,7 +49,8 @@ import PrivetRoute from "../PrivetRoute/PrivetRoute";
         },
         {
           path : "/blog",
-          element : <Blog></Blog>
+          element :<Blog></Blog>
+      
         }
         
       ]

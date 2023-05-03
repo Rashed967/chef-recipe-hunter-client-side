@@ -2,6 +2,8 @@ import React from "react";
 import image1 from '../../assets/image1.jpg'
 import Chefs from "../Chefs/Chefs";
 import { Link } from "react-router-dom";
+import Services from "../../shared/Services/Services";
+
 
 
 const Home = () => {
@@ -19,6 +21,8 @@ const Home = () => {
 </div>
 
       <Chefs></Chefs>
+      {/* <Services></Services> */}
+      <Services></Services>
         </div>
     );
 };

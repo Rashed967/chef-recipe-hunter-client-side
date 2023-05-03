@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { lazy, useContext } from 'react';
 import { Link, useLoaderData, useParams } from 'react-router-dom';
 import image1 from '../../assets/image1.jpg'
 import { BiLike } from 'react-icons/bi';
@@ -15,9 +15,10 @@ const ChefRecipes = () => {
     
     return (
         <div>
+
             <div className="hero min-h-screen bg-base-200">
   <div className="hero-content flex-col lg:flex-row-reverse">
-    <img src={picture} className="max-w-sm  shadow-2xl" />
+    <img loading={lazy} src={picture} className="max-w-sm  shadow-2xl" />
     <div>
       <h1 className="text-5xl font-bold">{name}</h1>
       <p className="py-6">{bio}</p>
@@ -27,6 +28,7 @@ const ChefRecipes = () => {
     </div>
   </div>
 </div>
+
 
 
         <div>
