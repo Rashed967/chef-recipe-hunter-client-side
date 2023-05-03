@@ -18,18 +18,18 @@ const ChefRecipeLayout = React.lazy(() => import('../../layout/ChefRecipeLayout'
 
 
   const router = createBrowserRouter([
-    {
-        path : "chefs",
-        element : <React.Suspense fallback="Loading"><ChefRecipeLayout></ChefRecipeLayout></React.Suspense>,
-        children : [
-            {
-              path : ":id",
-              element : <PrivetRoute><ChefRecipes></ChefRecipes></PrivetRoute>,
-              loader : ({params}) => fetch(`https://afghan-chef-hunter-server-rashed967.vercel.app/chefs/${params.id}`)
-            }
-        ]
+    // {
+    //     path : "chefs",
+    //     element : <React.Suspense fallback="Loading"><ChefRecipeLayout></ChefRecipeLayout></React.Suspense>,
+    //     children : [
+    //         {
+    //           path : ":id",
+    //           element : <PrivetRoute><ChefRecipes></ChefRecipes></PrivetRoute>,
+    //           loader : ({params}) => fetch(`https://afghan-chef-hunter-server-rashed967.vercel.app/chefs/${params.id}`)
+    //         }
+    //     ]
 
-    },
+    // },
     {
       path: "/",
       element: <Main></Main>,
@@ -39,6 +39,11 @@ const ChefRecipeLayout = React.lazy(() => import('../../layout/ChefRecipeLayout'
           element : <Home></Home>
         }
         ,
+        {
+          path : "chefs/:id",
+          element : <PrivetRoute><ChefRecipes></ChefRecipes></PrivetRoute>,
+          loader : ({params}) => fetch(`https://afghan-chef-hunter-server-rashed967.vercel.app/chefs/${params.id}`)
+        },
         {
           path : "/login",
           element : <Login></Login>
