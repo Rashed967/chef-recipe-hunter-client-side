@@ -4,6 +4,7 @@ import image2 from "../../assets/chef1.jpg"
 import Chefs from "../Chefs/Chefs";
 import { Link } from "react-router-dom";
 import Services from "../../shared/Services/Services";
+import Story from "../../shared/Story/Story";
 
 
 
@@ -24,6 +25,7 @@ const Home = () => {
       <Chefs></Chefs>
       {/* <Services></Services> */}
       <Services></Services>
+      <Story></Story>
         </div>
     );
 };
