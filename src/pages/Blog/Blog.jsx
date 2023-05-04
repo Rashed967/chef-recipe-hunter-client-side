@@ -1,15 +1,30 @@
 import React from 'react';
-import NavBar from '../../shared/NavBar/NavBar';
-import Footer from '../../shared/Footer/Footer';
+import Pdf from "react-to-pdf";
+import './Blog.css'
+
+const ref = React.createRef();
+const options = {
+    orientation: 'potraite',
+    unit: 'in',
+    format: [15.3,17.7]
+};
 
 
 const Blog = () => {
     return (
-        <div className='container mx-auto'>
+        <div ref={ref} className='container mx-auto '>
             <div className='py-10 text-center font-semibold text-3xl bg-yellow-100 text-black'>
             <h1>Blog page</h1>
             </div>
 
+            <div className='flex justify-center p-5'>
+            <Pdf targetRef={ref} filename="code-example.pdf" options={options}>
+        {({ toPdf }) => <button className='btn bg-lime-50 text-black hover:text-white' onClick={toPdf}>Generate Pdf</button>}
+      </Pdf>
+            </div>
+
+
+            <div  className='container w-full border'>
             <div className='mt-8 space-y-4 lg:w-2/4 mx-auto md:w-3/4 p-5'>
             <h1 className='text-2xl font-semibold '>differences between uncontrolled and controlled components</h1>
             <p className='text-xl font-normal'>A controlled component is a component that is controlled by a higher-level component or system. It receives its inputs from the higher-level component and responds only to the commands or requests that it receives from that component.</p>
@@ -17,7 +32,7 @@ const Blog = () => {
             An uncontrolled component, on the other hand, is a component that can operate independently of a higher-level component. It receives its inputs from external sources and can be affected by external factors. The behavior of an uncontrolled component is not entirely predictable, as it can be influenced by factors outside of its control.
             </p>
             </div>
-
+          <br />
 
             <div className='mt-8 space-y-4 lg:w-2/4 mx-auto md:w-3/4 p-5'>
             <h1 className='text-2xl font-semibold '>How to validate React props using PropTypes</h1>
@@ -43,6 +58,7 @@ const Blog = () => {
             <p className='text-xl font-normal'>
             Custom hooks are useful in situations where you need to share logic between multiple components, or when you have complex logic that you want to keep separate from your component code.
             </p>
+            </div>
             </div>
 
         </div>

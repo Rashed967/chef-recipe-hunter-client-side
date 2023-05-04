@@ -1,10 +1,8 @@
 import React, { useContext, useState } from 'react';
-import { FaExpeditedssl, FaGithub, FaGoogle } from 'react-icons/fa';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider/AuthProvider';
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
-const auth = getAuth();
 
 
 const Login = () => {
@@ -67,9 +65,9 @@ const Login = () => {
 
 
         <div className="form-control mt-6">
-          <Link to={from} className="btn bg-lime-50 text-black">Login</Link>
+          <Link to={from} className="btn bg-lime-50 text-black hover:text-white">Login</Link>
         </div>
-        <p>New to this website? <Link to="/register">Register Now</Link></p>
+        <p>New to this website? <Link className='text-blue-500' to="/register">Register Now</Link></p>
         <div>
             <h3 className='text-center border-b-2'>Other option</h3>
             <div className='flex justify-center space-x-3 text-2xl mt-4'>
