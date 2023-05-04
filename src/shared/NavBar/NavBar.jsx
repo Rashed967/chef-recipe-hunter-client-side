@@ -7,7 +7,7 @@ import ActiveLink from '../ActiveLink/ActiveLink';
 
 const NavBar = () => {
    const {user} = useContext(AuthContext)
-   console.log(user)
+  console.log(user)
     return (
         <div>
             <div className="navbar bg-base-100">
@@ -22,8 +22,13 @@ const NavBar = () => {
   </div>
   <div className="navbar-end">
     {
-      user ? <Link className="btn"><FaRegUser className="" /></Link>
-      : <Link to="/login" className="btn">Login</Link>
+      user ? <div className="hover:tooltip hover:tooltip-open hover:tooltip-left tooltip-primary text-lime-50" data-tip={user.displayName}>
+   <Link className="btn"  ><FaRegUser className="text-lime-50" /></Link>
+    </div>
+      
+      
+
+      : <Link to="/login" className="btn bg-lime-50">Login</Link>
     }
   </div>
 </div>

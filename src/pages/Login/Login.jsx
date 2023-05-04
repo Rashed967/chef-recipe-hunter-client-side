@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaExpeditedssl, FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider/AuthProvider';
@@ -9,6 +9,7 @@ const auth = getAuth();
 
 const Login = () => {
   const {signInUser, googelSignIn, gitHubSignIn} = useContext(AuthContext)
+  const [error, setError] = useState()
 
   const location = useLocation()
   const from = location?.state?.from?.pathname || "/";
@@ -19,7 +20,11 @@ const Login = () => {
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value; 
+    if(email.length < 0){
+      return setError("email is empty")
+    }
     signInUser(email, password)
+   
     .then(result => {
       const loggedUser = result.user;
       console.log(loggedUser)
@@ -57,11 +62,12 @@ const Login = () => {
           <label className="label">
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
           </label>
+          <p>{error}</p>
         </div>
 
 
         <div className="form-control mt-6">
-          <Link to={from} className="btn btn-primary">Login</Link>
+          <Link to={from} className="btn bg-lime-50 text-black">Login</Link>
         </div>
         <p>New to this website? <Link to="/register">Register Now</Link></p>
         <div>

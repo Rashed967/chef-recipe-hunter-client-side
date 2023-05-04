@@ -13,11 +13,11 @@ const Home = () => {
         <div>
             <div className="hero min-h-screen bg-base-200">
   <div className="hero-content flex-col lg:flex-row-reverse">
-    <img src={image2} className="max-w-sm rounded-md  shadow-2xl" />
+    <img src={image2} className=" lg:max-w-sm rounded-md  shadow-2xl" />
     <div>
-      <h1 className="text-5xl font-bold">A Culinary Mastermind with a Passion for Flavors</h1>
+      <h1 className="text-3xl md:text-5xl font-bold">A Culinary Mastermind with a Passion for Flavors</h1>
       <p className="py-6">A culinary mastermind with a passion for flavors. His innovative creations using fresh ingredients have earned him recognition and accolades.</p>
-      <Link to="/login" className="btn bg-lime-50 text-black">Login Now</Link >
+      <Link to="/login" className="btn bg-lime-50 hover:text-white text-black">Login Now</Link >
     </div>
   </div>
 </div>

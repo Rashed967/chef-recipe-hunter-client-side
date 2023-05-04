@@ -18,11 +18,11 @@ const Chef = ({chef}) => {
     <p>experience : {experience} Years</p>
     <p>Numbers of recipes : {numRecipes} Recipe</p>
     <div className="card-actions justify-between items-center mt-3">
-      <div className="flex space-x-2 items-center ">
+      <div className="btn hover:bg-lime-50 flex bg-lime-50 text-black p-2 rounded-md space-x-2 items-center ">
         <BiLike></BiLike>
         <span> {likes}</span>
       </div>
-      <Link to={`/chefs/${id}`} className="badge badge-outline">View Recipes</Link>
+      <Link to={`/chefs/${id}`} className="btn bg-lime-50 text-black hover:text-white">View Recipes</Link>
     </div>
   </div>
 </div>

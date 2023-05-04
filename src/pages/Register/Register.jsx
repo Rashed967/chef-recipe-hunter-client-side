@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider/AuthProvider';
 
 const Register = () => {
-    const {user,createUser, googelSignIn, gitHubSignIn} = useContext(AuthContext)
+    const {createUser, googelSignIn, gitHubSignIn} = useContext(AuthContext)
     const [error, setError] = useState(null)
     
     const handleRegister = (event) =>{
@@ -78,7 +78,7 @@ const Register = () => {
 
         
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Register</button>
+          <button className="btn bg-lime-50 text-black">Register</button>
         </div>
         <p>Already have an account? <Link to="/login">Login</Link></p>
 
