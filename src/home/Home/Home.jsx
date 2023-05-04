@@ -17,7 +17,7 @@ const Home = () => {
     <div>
       <h1 className="text-3xl md:text-5xl font-bold">A Culinary Mastermind with a Passion for Flavors</h1>
       <p className="py-6">A culinary mastermind with a passion for flavors. His innovative creations using fresh ingredients have earned him recognition and accolades.</p>
-      <Link to="/login" className="btn bg-lime-50 hover:text-white text-black">Login Now</Link >
+      <Link to="/login" className="btn bg-lime-50 text-black hover:text-white">Login Now</Link >
     </div>
   </div>
 </div>

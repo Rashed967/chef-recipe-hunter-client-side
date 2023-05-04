@@ -28,7 +28,7 @@ const NavBar = () => {
       
       
 
-      : <Link to="/login" className="btn bg-lime-50">Login</Link>
+      : <Link to="/login" className="btn bg-lime-50 text-black hover:text-white">Login</Link>
     }
   </div>
 </div>
